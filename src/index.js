@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Home from 'views/Home';
+import RedirectC from 'views/RedirectC';
+import NotFound from 'views/NotFound';
+import { Router, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import "css/shortener-url.css";
+
+
+const hist = createBrowserHistory();
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router history={hist}>
+    <Switch>
+    <Route path="/:shortenedId" component={RedirectC} />
+    <Route path="/" component={Home} />
+    <Route path="*" component={NotFound} />
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 

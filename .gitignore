@@ -5,8 +5,14 @@
 /.pnp
 .pnp.js
 
+# unnecessary
+/functions
+
 # testing
 /coverage
+
+# firebase config
+/src/components/Firebase/config.js
 
 # production
 /build
