@@ -7,7 +7,7 @@ import RedirectC from 'views/RedirectC';
 import NotFound from 'views/NotFound';
 import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import "css/shortener-url.css";
+import "assets/scss/material-kit-react.scss?v=1.9.0";
 
 
 const hist = createBrowserHistory();

@@ -8,18 +8,17 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import styles from "./cardStyle.js";
+import styles from "assets/jss/material-kit-react/components/cardStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function Card(props) {
   const classes = useStyles();
-  const { className, children, plain, profile, chart, ...rest } = props;
+  const { className, children, plain, carousel, ...rest } = props;
   const cardClasses = classNames({
     [classes.card]: true,
     [classes.cardPlain]: plain,
-    [classes.cardProfile]: profile,
-    [classes.cardChart]: chart,
+    [classes.cardCarousel]: carousel,
     [className]: className !== undefined
   });
   return (
@@ -32,7 +31,6 @@ export default function Card(props) {
 Card.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
-  profile: PropTypes.bool,
-  chart: PropTypes.bool,
+  carousel: PropTypes.bool,
   children: PropTypes.node
 };
